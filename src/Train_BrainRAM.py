@@ -49,10 +49,6 @@ def get_args():
         help="if not using wandb and want to resume from a ckpt",
     )
     parser.add_argument(
-        "--wandb_project",type=str,default="stability",
-        help="wandb project name",
-    )
-    parser.add_argument(
         "--mixup_pct",type=float,default=.33,
         help="proportion of way through training when to switch from BiMixCo to SoftCLIP",
     )
