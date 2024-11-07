@@ -17,7 +17,7 @@ assert sub in [1,2,5,7]
 # Specify your nsd path here
 #############################
 NSD_PATH = ''
-
+os.makedirs('preprocessed_data/', exist_ok=True)
 
 def loadmat(filename):
     '''
