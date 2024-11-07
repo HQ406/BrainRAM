@@ -30,10 +30,6 @@ def get_args():
         help="name of model, used for ckpt saving and wandb logging (if enabled)",
     )
     parser.add_argument(
-        "--data_path", type=str,
-        help="Path to where NSD data is stored / where to download it to",
-    )
-    parser.add_argument(
         "--subj",type=int, default=1, choices=[1,2,5,7],
     )
     parser.add_argument(
@@ -114,7 +110,7 @@ def get_args():
     )
     parser.add_argument(
         "--vd_cache_dir", type=str, default='shi-labs/versatile-diffusion',
-        help="Where is cached Versatile Diffusion model; if not cached will download to this path",
+        help="Where is cached Versatile Diffusion model",
     )
     parser.add_argument(
         "--prior_modality", type=str, choices=['image', 'text'],
