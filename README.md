@@ -21,6 +21,7 @@ conda:
 3. Specify your `NSD_PATH` at `prepare_nsd/prepare_nsddata.py`. 
 
 4. Run following commands to preprocess NSD data:
+
 ```
 cd prepare_nsd/
 python prepare_nsddata.py --sub [1,2,5,7]
@@ -28,4 +29,22 @@ python prepare_coco_embeds.py --sub [1,2,5,7]
 ```
 
 
+
+### Training on stage 1
+
+```
+python Train_BrainRAM --model_name image_prior --prior_modality image
+python Train_BrainRAM --model_name text_prior --prior_modality text
+```
+
+
+
+### Reconstruction
+
+```
+python Reconstructions.py --model_name output \
+                          --image_model train_logs/image_prior/last.pth \
+                          --text_model train_logs/text_prior/last.pth \
+                          --recons_per_sample 4
+```
 
